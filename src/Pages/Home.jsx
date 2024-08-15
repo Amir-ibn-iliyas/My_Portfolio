@@ -6,6 +6,7 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../Components/HomeInfo";
+import { Html } from "@react-three/drei";
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -41,9 +42,11 @@ const Home = () => {
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
   return (
     <section className="w-full h-screen relative">
+      <Html>
       <div className=" absolute top-28 left-0 right-0  z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
+      </Html>
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
