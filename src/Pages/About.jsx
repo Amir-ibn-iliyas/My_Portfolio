@@ -53,7 +53,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* <div className="mt-12 flex">
+        <div className="mt-12 flex">
           <VerticalTimeline>
             {experiences.map((experience, index) => (
               <VerticalTimelineElement
@@ -101,7 +101,7 @@ const About = () => {
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
-        </div> */}
+        </div>
 
       </div>
 

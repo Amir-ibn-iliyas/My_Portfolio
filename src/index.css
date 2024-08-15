@@ -48,7 +48,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .btn {
-    @apply text-white bg-gradient-to-r from-[#00ff87] to-[#00923f] focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+    @apply hover:scale-105 duration-300 text-white bg-gradient-to-r from-[#00ff87] to-[#00923f] focus:ring-4 focus:outline-none focus:ring-green-300 font-bold uppercase  rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
 }
 
   .header {
@@ -183,4 +183,34 @@ body:has(.card[data-color="green"]:hover) {
   border: #fff;
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #a1eaa1, 1vmin 1vmin #a1eaa1,
   0.65vmin 1vmin #a1eaa1, 1vmin 0.65vmin #a1eaa1;
+}
+
+/* nav link style  */
+.nav_link{
+  height: 40px;
+  width: 90px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+  border: #8c8f8dc1 1.5px solid;
+}
+.nav_link::after{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #00ff87, #00923f);
+  z-index: -1;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+}
+
+.nav_link:hover{
+  color: white;
+}
+.nav_link:hover::after{
+  top: 0px;
+  color: white;
 }

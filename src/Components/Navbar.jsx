@@ -10,13 +10,13 @@ const Navbar = () => {
       </NavLink>
       <nav className="flex text-lg gap-7 font-medium">
 
-        <div className="py-1 px-4 rounded-lg bg-white flex items-center justify-center shadow-lg hover:cursor-pointer ">
-      <NavLink to="about" className={({isActive})=> isActive?'text-green-500':'text-black-500 '} >
+        <div className="group nav_link rounded-lg bg-white flex items-center justify-center shadow-lg hover:cursor-pointer ">
+      <NavLink to="about" className={({isActive})=> isActive?' text-green-500  group-hover:text-white':'text-black-500 group-hover:text-white '} >
         About
       </NavLink>
         </div>
-        <div className="py-1 px-4 rounded-lg bg-white flex items-center justify-center shadow-lg hover:cursor-pointer ">
-      <NavLink to="projects" className={({isActive})=> isActive?'text-green-500':'text-black-500'}>
+        <div className="group nav_link rounded-lg bg-white flex items-center justify-center shadow-lg  hover:cursor-pointer  ">
+      <NavLink to="projects"  className={({isActive})=> isActive?'text-green-500 border-b-green-500 group-hover:text-white':'text-black-500 group-hover:text-white '}>
         Projects
       </NavLink>
       </div>
