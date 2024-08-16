@@ -5,7 +5,6 @@ import { a } from "@react-spring/three";
 import islandScene from "../assets/3d/island.glb";
 
 const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
-  
   const islandRef = useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
@@ -92,18 +91,33 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
 
   useEffect(() => {
     const canvas = gl.domElement;
-    canvas.addEventListener("pointerdown", handlePointerDown);
-    canvas.addEventListener("pointerup", handlePointerUp);
-    canvas.addEventListener("pointermove", handlePointerMove);
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("keyup", handleKeyUp);
 
-    return () => {
+    // Add event listeners for touch and mouse events
+    const addEventListeners = () => {
+      canvas.addEventListener("pointerdown", handlePointerDown);
+      canvas.addEventListener("pointerup", handlePointerUp);
+      canvas.addEventListener("pointermove", handlePointerMove);
+      canvas.addEventListener("touchstart", handlePointerDown);
+      canvas.addEventListener("touchend", handlePointerUp);
+      canvas.addEventListener("touchmove", handlePointerMove);
+      document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener("keyup", handleKeyUp);
+    };
+
+    const removeEventListeners = () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
       canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handlePointerDown);
+      canvas.removeEventListener("touchend", handlePointerUp);
+      canvas.removeEventListener("touchmove", handlePointerMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
+    };
+
+    addEventListeners();
+    return () => {
+      removeEventListeners();
     };
   }, [gl.domElement, handlePointerDown, handlePointerUp, handlePointerMove, handleKeyDown, handleKeyUp]);
 
