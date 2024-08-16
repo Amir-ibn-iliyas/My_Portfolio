@@ -147,14 +147,14 @@ const Contact = () => {
         >
           <ambientLight intensity={0.5} />
           <directionalLight intensity={2.5} position={[0, 0, 1]} />
-          <Suspense fallback={<Loader />}>
+          <Suspense  fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[13, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
-          </Suspense>
+          </Suspense >
         </Canvas>
       </div>
     </section>
