@@ -41,7 +41,7 @@ const Contact = () => {
         setIsLoading(false);
         showAlert({
           show: true,
-          text: "Message Sent Successfully ",
+          text: "Message Sent Successfully",
           type: "success",
         });
         setTimeout(() => {
@@ -57,9 +57,13 @@ const Contact = () => {
 
         showAlert({
           show: true,
-          text: "I did not receive Your Message Successfully ",
+          text: "Failed to send the message. Please try again later.",
           type: "danger",
         });
+
+        setTimeout(() => {
+          hideAlert();
+        }, 5000); // Extended time to allow the user to read the error message
       });
   };
 
@@ -67,18 +71,19 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className=" relative flex lg:flex-row flex-col max-container ">
+    <section className="relative flex lg:flex-row flex-col max-container">
       {alert.show && <Alert {...alert} />}
-      <div className=" flex-1 min-w-[50%] flex flex-col">
+      <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
         <form
           onSubmit={handleSubmit}
-          className=" w-full flex flex-col gap-7 mt-14"
+          className="w-full flex flex-col gap-7 mt-14"
         >
-          <label className=" text-black-500 font-semibold ">
+          <label htmlFor="name" className="text-black-500 font-semibold">
             Name
             <input
+              id="name"
               type="text"
               name="name"
               className="input"
@@ -90,9 +95,10 @@ const Contact = () => {
               onBlur={handleBlur}
             />
           </label>
-          <label className=" text-black-500 font-semibold ">
+          <label htmlFor="email" className="text-black-500 font-semibold">
             Email
             <input
+              id="email"
               type="email"
               name="email"
               className="input"
@@ -105,9 +111,10 @@ const Contact = () => {
             />
           </label>
 
-          <label className=" text-black-500 font-semibold ">
+          <label htmlFor="message" className="text-black-500 font-semibold">
             Your Message
             <textarea
+              id="message"
               type="text"
               name="message"
               rows={4}
@@ -123,11 +130,9 @@ const Contact = () => {
           <button
             className="btn"
             type="submit"
-            onFocus={handleFocus}
-            onBlur={handleBlur}
             disabled={isLoading}
           >
-            {isLoading ? "Sending....." : "Send Message"}
+            {isLoading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
