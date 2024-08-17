@@ -184,7 +184,7 @@ export const socialLinks = [
 
 // export const projects = [
 //     {
-//         iconUrl: pricewise,
+//         iconUrl: ,
 //         theme: 'btn-back-red',
 //         name: 'Amazon Price Tracker',
 //         description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
