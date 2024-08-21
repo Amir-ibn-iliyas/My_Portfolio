@@ -187,7 +187,7 @@ export const projects = [
         iconUrl: Apple,
         theme: 'btn-back-black',
         name: 'Clone Apple 15 pro',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
+        description: 'Crafted a high-fidelity iPhone 15 Pro clone web frontend using React JS, Three.js, and GSAP. This project demonstrates my expertise in recreating complex and interactive user interfaces with smooth animations and 3D elements, ensuring a seamless and responsive user experience',
         link: 'https://apple-website-sigma-three.vercel.app',
     },
     
