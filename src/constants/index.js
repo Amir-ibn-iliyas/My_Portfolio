@@ -185,7 +185,7 @@ export const socialLinks = [
 export const projects = [
     {
         iconUrl: Apple,
-        theme: 'btn-back-red',
+        theme: 'btn-back-black',
         name: 'Clone Apple 15 pro',
         description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
         link: 'https://apple-website-sigma-three.vercel.app',
