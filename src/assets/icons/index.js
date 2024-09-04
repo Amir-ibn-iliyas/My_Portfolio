@@ -48,7 +48,7 @@ export {
     twitter,
     car,
     estate,
-    pricewise,
+    // pricewise,
     snapgram,
     summiz,
     threads,
